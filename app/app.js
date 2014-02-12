@@ -10,4 +10,8 @@ var App = Ember.Application.extend({
   Resolver: Resolver['default']
 });
 
+Ember.TextField.reopen({
+    attributeBindings: ['autofocus']
+});
+
 export default App;
