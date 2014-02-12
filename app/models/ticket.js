@@ -4,7 +4,8 @@ var Ticket = DS.Model.extend({
     status: DS.attr('string')
 });
 
-Ticket.FIXTURES = [
+Ticket.reopenClass({
+    FIXTURES: [
     {
         id: 1,
         title: 'Ticket 1',
@@ -24,7 +25,7 @@ Ticket.FIXTURES = [
         status: 'New'
     }
 
-];
+]});
 
 
 export default Ticket;

@@ -59,8 +59,10 @@ test('creating a ticket', function() {
         .then(function(){
             ok(find('.list-group-item:contains("My New Ticket")').length,
             'expected new ticket to appear in master list');
-            ok(find('.panel-title:contains("My New Ticket)').length,
+            ok(find('.panel-title:contains("My New Ticket")').length,
             'expected to see ticket in the details view');
+            ok(find('.panel-title:contains("Open")').length,
+            'expected ticket status to be "Open".');
         });
 });
 

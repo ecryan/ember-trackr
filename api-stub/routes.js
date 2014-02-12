@@ -5,8 +5,8 @@ module.exports = function(server) {
 	server.namespace('/api', function() {
 
 		// Return fixture data for '/api/posts/:id'
-		server.get('/posts/:id', function(req, res) {
-			var post = {
+		server.get('/ticket/:id', function(req, res) {
+			var ticket = {
 					  "post": {
 					    "id": 1,
 					    "title": "Rails is omakase",
@@ -23,7 +23,7 @@ module.exports = function(server) {
 					  }]
 					};
 
-			res.send(post);
+			res.send(ticket);
 		});
 
 	});
