@@ -39,7 +39,8 @@
     "DS",
     "keyEvent",
     "isolatedContainer",
-    "startApp"
+    "startApp",
+    "md5"
   ],
   "node" : false,
   "browser" : false,

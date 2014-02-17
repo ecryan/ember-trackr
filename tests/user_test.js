@@ -2,24 +2,24 @@
 
 import { test, moduleForModel } from 'appkit/tests/helpers/module_for';
 
-var App,
-    store,
-    user;
+var App;
 
 moduleForModel('user', 'Integration - Model', {
     setup: function () {
         App = startApp();
-        user = this.subject();
-        store = this.store();
+
+
     },
     teardown: function() {
         Ember.run(App, 'destroy');
-        user = null;
     }
 });
 
 
 test('displayName', function() {
+    var user = this.subject();
+
+    var  store = this.store();
 
     Ember.run(function() {
         user = store.createRecord('user', {
@@ -35,6 +35,9 @@ test('displayName', function() {
 
 
 test('gravatarURL', function() {
+    var user = this.subject();
+
+    var  store = this.store();
 
     Ember.run(function(){
         user = store.createRecord('user', {
@@ -45,4 +48,38 @@ test('gravatarURL', function() {
     equal(user.get('gravatarURL'),
     'http://www.gravatar.com/avatar/e4f7cd8905e896b04425b1d08411e9fb.jpg?s=80');
 });
+
+test('gravatarURL with blank email', function(){
+    var user = this.subject();
+
+    var  store = this.store();
+
+    Ember.run(function() {
+        user = store.createRecord('user', {
+            email: ''
+        });
+    });
+
+    equal(user.get('gravatarURL'),
+        'http://www.gravatar.com/avatar/00000000000000000000000000000000.jpg?s=80');
+});
+
+test('gravatarURL with undefined email', function() {
+    var user = this.subject();
+
+    var  store = this.store();
+
+    Ember.run(function() {
+        user = store.createRecord('user');
+    });
+
+    equal(user.get('gravatarURL'),
+    'http://www.gravatar.com/avatar/00000000000000000000000000000000.jpg?s=80');
+});
+
+
+
+
+
+
 
