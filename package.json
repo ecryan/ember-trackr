@@ -50,5 +50,8 @@
     "loom": "~3.1.2",
     "connect-livereload": "~0.3.1",
     "grunt-contrib-sass": "~0.7.2"
+  },
+  "dependencies": {
+    "blueimp-md5": "~1.1.0"
   }
 }

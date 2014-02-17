@@ -66,4 +66,13 @@ test('creating a ticket', function() {
         });
 });
 
+test('cancelling ticket creation', function() {
+    visit('/tickets/new')
+        .click('button:contains("Cancel")')
+        .then(function() {
+            equal(find('[name="title"]').length, 0,
+            'expected not to find title field');
+        });
+});
+
 
