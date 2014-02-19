@@ -12,6 +12,9 @@ var UsersNewRoute = Ember.Route.extend({
             var promise = user.save();
 
             this.transitionTo('user', promise);
+        },
+        cancel: function() {
+            this.transitionTo('users');
         }
     }
 });

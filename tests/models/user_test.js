@@ -65,6 +65,15 @@ test('creating new user', function() {
         });
 });
 
+test('canceling user creation', function() {
+    visit('/users/new')
+        .click('button:contains("Cancel")')
+        .then(function(){
+            equal(find('[name=firstName]').length, 0,
+                'expected not to find firstName field');
+        });
+});
+
 
 //TODO: Remove gravatar related code
 //These test can be removed because they are tested in the component
