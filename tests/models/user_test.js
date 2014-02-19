@@ -58,7 +58,7 @@ test('creating new user', function() {
         .then(function() {
             ok(find('.list-group-item:contains("Peter Wagenet")').length,
             'expected new user to appear in master list');
-            ok(find('.panel-title:contains("Peter Waganet")').length,
+            ok(find('.panel-title:contains("Peter Wagenet")').length,
             'expected to see user in the detail view');
             ok(find('img[src^="http://www.gravatar.com/avatar/dc9c0271686d50337151a0f862edf3c2.jpg"]').length,
             'expected to see gravatar image in detail view');
