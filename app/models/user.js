@@ -22,4 +22,20 @@ var User = DS.Model.extend({
     }.property('email')
 });
 
+
+User.FIXTURES = [
+    {
+        id: 1,
+        firstName: 'Yehuda',
+        lastName: 'Katz',
+        email: 'wycats@gmail.com'
+    },
+    {
+        id: 2,
+        firstName: 'Tom',
+        lastName: 'Dale',
+        email: 'tom@tomdale.net'
+    }
+];
+
 export default User;
