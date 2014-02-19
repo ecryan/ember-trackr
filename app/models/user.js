@@ -7,6 +7,7 @@ var User = DS.Model.extend({
         return this.get('firstName') + ' ' + this.get('lastName');
     }.property('firstName', 'lastName')
 
+//TODO: Remove related code
 //Gravatar related code is now in component and can be removed
 //    gravatarURL: function() {
 //        var email = this.get('email'),

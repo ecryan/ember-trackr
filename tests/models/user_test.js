@@ -30,6 +30,24 @@ test('displayName', function() {
     equal(user.get('displayName'), 'Tom Dale');
 });
 
+test('editing user details', function() {
+    visit('/users/1')
+        .click('button:contains("Edit")')
+        .fillIn('input[name="firstName"]', 'Tomhuda')
+        .fillIn('input[name="lastName"]', 'KatzDale')
+        .fillIn('input[name="email"]', 'tomster@emberjs.com')
+        .click('button:contains("Done")')
+        .then(function() {
+            ok(find('.list-group-item:contains("Tomhuda KatzDale")').length,
+            'expected title in master list to update');
+            ok(find('.panel-title:contains("Tomhuda KatzDale")').length,
+            'expected title in detail view to update');
+            ok(find('img[src^="http://www.gravatar.com/avatar/0cf15665a9146ba852bf042b0652780a.jpg"]').length,
+            'expected gravatar to update');
+        });
+});
+
+//TODO: Remove gravatar related code
 //These test can be removed because they are tested in the component
 //test('gravatarURL', function() {
 //    var user = this.subject();
