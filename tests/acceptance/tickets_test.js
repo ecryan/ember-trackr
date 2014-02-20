@@ -75,4 +75,18 @@ test('cancelling ticket creation', function() {
         });
 });
 
+test('viewing ticket details', function() {
+    visit('/')
+        .click('a:contains("Tickets")')
+        .click('a:contains("Ticket 1")')
+        .then(function() {
+            ok(find('*:contains("Sed posuere consectetur est at lobortis.")').length,
+            'expected to find ticket description');
+            ok(find('a:contains("Yehuda Katz")').length,
+            'expected to find ticket creator');
+            ok(find('a:contains("Tom Dale")').length,
+            'expected to find ticket assignee');
+        });
+});
+
 
