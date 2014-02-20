@@ -46,7 +46,7 @@ User.FIXTURES = [
         id: 2,
         firstName: 'Tom',
         lastName: 'Dale',
-        email: 'tom@tomdale.net'
+        email: 'tom@tomdale.net',
         ticketsCreated: [2],
         ticketsAssigned: [1]
     }
