@@ -1,7 +1,15 @@
 var Ticket = DS.Model.extend({
     title: DS.attr('string'),
     description: DS.attr('string'),
-    status: DS.attr('string')
+    status: DS.attr('string'),
+    creator: DS.belongsTo('user', {
+        async: true,
+        inverse: 'ticketsCreated'
+    }),
+    assignee: DS.belongsTo('user', {
+        async: true,
+        inverse: 'ticketsAssigned'
+    })
 });
 
 Ticket.reopenClass({
