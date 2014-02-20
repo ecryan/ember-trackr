@@ -46,6 +46,10 @@ html, body {
     background-color: #fff;
 }
 
+.panel .list-group-item h5 {
+    margin-top: 0;
+}
+
 
 
 @keyframes domChanged { from { background: yellow; } }
