@@ -34,6 +34,7 @@ test('editing tickets details', function() {
         .fillIn('input[name="title"]', 'Foo Bar')
         .fillIn('select[name="status"]', 'Open')
         .fillIn('textarea[name="description"]', 'New description')
+        .fillIn('select[name="assignee"]', '1')
         .click('button:contains("Done")')
         .then(function(){
             ok(find('.list-group-item:contains("Foo Bar")').length,
@@ -46,6 +47,9 @@ test('editing tickets details', function() {
 
             ok(find('.panel-body:contains("New description")').length,
             'expected description to update');
+
+            ok(find('a:contains("Yehuda Katz")').length === 2,
+            'expected Yehuda to be creator and assignee');
         });
 });
 
