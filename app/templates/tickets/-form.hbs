@@ -33,12 +33,12 @@
                 <h5>Reported by:</h5>
                 {{gravatar-image email=creator.email size=40 class="img-circle"}}
                 {{view Ember.Select
-                    content=programmers
-                    optionValuePath="content.id"
-                    optionLabelPath="content.firstName"
-                    selection=selectedPerson
+                content=programmers
+                optionValuePath="content.id"
+                optionLabelPath="content.firstName"
+                selection=selectedPerson
+                prompt="Please select a user"
                 }}
-
                 {{log selectedPerson}}
 
             </div>
@@ -47,10 +47,7 @@
                 {{gravatar-image email=assignee.email size=40 class="img-circle"}}
                 {{view Ember.Select name="test"}}
 
-
             </div>
-            <div>
-
         </div>
     </div>
 </div>

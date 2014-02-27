@@ -1,7 +1,7 @@
 var TicketController = Ember.ObjectController.extend({
     statuses: ['New', 'Open', 'Closed'],
-//    needs: ['users'],
-//    users: Ember.computed.oneWay('controllers.users'),
+    needs: ['users'],
+    users: Ember.computed.oneWay('controllers.users'),
     selectedPerson: null,
 
     programmers: [
