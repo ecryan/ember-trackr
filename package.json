@@ -52,6 +52,7 @@
     "grunt-contrib-sass": "~0.7.2"
   },
   "dependencies": {
-    "blueimp-md5": "~1.1.0"
+    "blueimp-md5": "~1.1.0",
+    "loom-generators-ember-appkit": "^1.0.4"
   }
 }

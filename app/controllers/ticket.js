@@ -1,21 +1,7 @@
-var TicketController = Ember.ObjectController.extend({
-    statuses: ['New', 'Open', 'Closed'],
-    needs: ['users'],
-    users: Ember.computed.oneWay('controllers.users.model'),
+import NeedsUsers from 'appkit/mixins/needs-users';
 
-    selectedCreator: null,
-    selectedAssignee: null,
-
-    selectedCreatorSetModel: function() {
-        var user = this.get('users').findBy('id', this.selectedCreator.id);
-        this.set('creator', user);
-    }.observes('selectedCreator'),
-
-    selectedAssigneeSetModel: function() {
-        var user = this.get('users').findBy('id', this.selectedAssignee.id);
-        this.set('assignee', user);
-
-    }.observes('selectedAssignee')
+var TicketController = Ember.ObjectController.extend(NeedsUsers, {
+    statuses: ['New', 'Open', 'Closed']
 });
 
 export default TicketController;

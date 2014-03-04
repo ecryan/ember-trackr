@@ -1,15 +1,8 @@
-var TicketsNewRoute = Ember.Route.extend({
+import PreloadUsers from 'appkit/mixins/preload-users';
+
+var TicketsNewRoute = Ember.Route.extend(PreloadUsers, {
     model: function() {
         return {};
-    },
-    afterModel: function() {
-        var usersController = this.controllerFor('users');
-
-        var promise = this.get('store').findAll('user').then(function(users) {
-            usersController.set('model', users);
-        });
-
-        return promise;
     },
 
     actions: {

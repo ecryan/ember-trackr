@@ -1,4 +1,6 @@
-var TicketsNewController = Ember.ObjectController.extend({
+import NeedsUsers from 'appkit/mixins/needs-users';
+
+var TicketsNewController = Ember.ObjectController.extend(NeedsUsers, {
     statuses: ['New', 'Open', 'Closed']
 
 });
