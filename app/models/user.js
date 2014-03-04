@@ -33,6 +33,12 @@ User.FIXTURES = [
         email: 'tom@tomdale.net',
         ticketsCreated: [2],
         ticketsAssigned: [1]
+    },
+    {
+        id: 3,
+        firstName: 'Elrick',
+        lastName: 'VM',
+        email: 'ryan.elr.htc@gmail.com'
     }
 ];
 

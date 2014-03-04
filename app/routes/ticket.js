@@ -17,7 +17,6 @@ var TicketRoute = Ember.Route.extend({
             this.set('controller.isEditing', false);
 
             this.modelFor('ticket').save();
-
         }
     }
 });
